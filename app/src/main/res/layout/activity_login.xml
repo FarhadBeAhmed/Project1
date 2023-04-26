@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:fitsSystemWindows="true"
+        android:paddingVertical="10dp">
+
+        <ImageView
+            android:id="@+id/logoId"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_launcher_background"
+            tools:ignore="ContentDescription" />
+
+        <RelativeLayout
+            android:id="@+id/uLayoutId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logoId"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/usernameId"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:background="@color/Trans"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:drawableStart="@drawable/custom_username_icon"
+                    android:drawablePadding="10dp"
+                    android:focusable="true"
+                    android:hint="Username"
+                    android:paddingStart="10dp"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
+                    tools:ignore="HardcodedText,RtlSymmetry" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/passLayId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/uLayoutId"
+            android:layout_centerHorizontal="true">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/passwordId"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:background="@color/Trans"
+                app:hintEnabled="false"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/custom_password_icon"
+                    android:drawablePadding="10dp"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:paddingStart="10dp"
+                    android:textColor="@color/black"
+                    android:textCursorDrawable="@null"
+                    tools:ignore="HardcodedText,RtlSymmetry" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/checkLayoutid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/passLayId"
+            android:layout_centerHorizontal="true">
+
+            <CheckBox
+                android:id="@+id/rememberMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save Password"
+                android:textSize="15sp"
+                tools:ignore="HardcodedText" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/logInBtnId"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/checkLayoutid"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/login_btn_back"
+            android:gravity="center"
+            android:text="LOG IN"
+            android:textColor="@color/white"
+            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/signupTxtId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logInBtnId"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:text="Sign up now"
+            android:textSize="15sp"
+
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,TouchTargetSizeCheck" />
+
+    </RelativeLayout>
+
+</ScrollView>

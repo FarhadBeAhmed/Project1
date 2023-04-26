@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".changePassPinActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        >
+        <include
+            android:id="@+id/flexiloadToolbarId"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/flexiloadToolbarId"
+
+            >
+
+            <RelativeLayout
+                android:id="@+id/changePassLayout1"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                >
+                <TextView
+                    android:id="@+id/passwordChangeId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/green"
+                    android:text="Password Change"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/oldPassId"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/passwordChangeId"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/pass_pin_change_back"
+                    android:hint="Old Password"
+                    android:paddingStart="10dp"
+                    tools:ignore="HardcodedText,RtlSymmetry,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/newPassId"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/pass_pin_change_back"
+                    android:layout_below="@+id/oldPassId"
+                    android:hint="New Password"
+                    android:layout_marginTop="10dp"
+                    android:paddingStart="10dp"
+                    tools:ignore="HardcodedText,RtlSymmetry,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/confirmPassId"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/newPassId"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/pass_pin_change_back"
+                    android:hint="Confirm Password"
+                    android:minHeight="48dp"
+                    android:paddingStart="10dp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/confirmPassId"
+                    android:text="submit" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@+id/changePassLayout1"
+                android:paddingTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                >
+                <TextView
+                    android:id="@+id/pinChangeId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/green"
+                    android:text="Pin Change"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/oldPinId"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/pass_pin_change_back"
+                    android:layout_below="@+id/pinChangeId"
+                    android:hint="Old Pin"
+                    tools:ignore="HardcodedText,RtlSymmetry,TouchTargetSizeCheck"
+                    android:paddingStart="10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/newPinId"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/pass_pin_change_back"
+                    android:layout_below="@+id/oldPinId"
+                    android:hint="New Pin"
+                    android:paddingStart="10dp"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="HardcodedText,RtlSymmetry,TouchTargetSizeCheck" />
+
+                <EditText
+                    android:id="@+id/confirmPinId"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/newPinId"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/pass_pin_change_back"
+                    android:hint="Confirm Pin"
+                    android:minHeight="48dp"
+                    android:paddingStart="10dp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="submit"
+                    android:layout_below="@id/confirmPinId"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

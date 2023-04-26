@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".allFragmnts.HistoryFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/allOptionsId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray"
+                android:padding="5dp">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+
+                        <RelativeLayout
+                            android:id="@+id/flaxiLayoutId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingHorizontal="6dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/flaxiBtnImgId"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/flag_logo"
+
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/flaxiBtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="-2dp"
+                                android:text="Flexiload" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/blLayoutId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
+                            android:clickable="true"
+                            android:paddingHorizontal="6dp"
+                            android:focusable="true"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/banglalinkBtnImgId"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/flag_logo"
+
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/banglalinkBtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="-2dp"
+                                android:text="Bangla Link" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/bkshLayoutId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingHorizontal="6dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/bkshBtnImgId"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/flag_logo"
+
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/bkshBtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="-2dp"
+                                android:text="Bkash" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/rocketLayoutId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingHorizontal="6dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/rocketBtnImgId"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/flag_logo"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/rocketBtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="-2dp"
+                                android:text="Rocket" />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/NagadLayoutId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingHorizontal="6dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/NagadBtnImgId"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/flag_logo"
+
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/NagadBtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="-2dp"
+                                android:text="Nagad" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/bdeshLayoutId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
+                            android:clickable="true"
+                            android:paddingHorizontal="6dp"
+                            android:focusable="true"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/bdeshBtnImgId"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/flag_logo"
+
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/bdeshBtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="-2dp"
+                                android:text="Bangladesh" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/billLayoutId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingHorizontal="5dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/billImgId"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/flag_logo"
+
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/billImgId"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="-2dp"
+                                android:text="Bill Payment" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/callingLayoutId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingHorizontal="5dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/callingBtnImgId"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/flag_logo"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/callingBtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="-2dp"
+                                android:text="Calling Card" />
+
+                        </RelativeLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/allOptionsId"
+            android:layout_margin="5dp"
+            android:background="@color/light_gray2"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Data Available"
+                android:textSize="30sp"
+                android:layout_centerInParent="true"
+                android:textColor="@color/green"
+                />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

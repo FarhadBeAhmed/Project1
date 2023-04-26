@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpPage">
+
+    <include
+        android:id="@+id/signUpToolbarId"
+        layout="@layout/toolbar" />
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/signUpToolbarId">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="40dp"
+            >
+
+
+
+        <LinearLayout
+            android:id="@+id/cId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/edit_text_background_for_signup"
+
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@color/gray"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:src="@drawable/flag_logo"
+
+                    />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/Trans"
+                android:hint="country"
+                android:paddingLeft="10dp"
+
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/numId"
+            android:layout_below="@+id/cId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_background_for_signup"
+
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@color/gray"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+88"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/Trans"
+                android:hint="Mobile Number"
+                android:paddingLeft="10dp"
+
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/fnamId"
+            android:layout_below="@+id/numId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_background_for_signup"
+
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@color/gray"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:src="@drawable/profile"
+
+                    />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/Trans"
+                android:hint="Full Name"
+                android:paddingLeft="10dp"
+
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/eId"
+            android:layout_below="@+id/fnamId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/edit_text_background_for_signup"
+
+            >
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:background="@color/gray"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    android:src="@drawable/ic_baseline_mail_24"
+
+                    />
+            </LinearLayout>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/Trans"
+                android:hint="E-Mail"
+                android:paddingLeft="10dp"
+
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+        </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/eId"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:background="@color/gray"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

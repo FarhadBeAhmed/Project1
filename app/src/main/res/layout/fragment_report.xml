@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageNormalBackgroundColor"
+    tools:context=".allFragmnts.ReportFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="30dp">
+
+        <RelativeLayout
+            android:id="@+id/historyLayoutForFirstRowId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/rHistoryLayoutId"
+                    android:layout_width="wrap_content"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="2dp"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    >
+
+                    <ImageView
+                        android:id="@+id/historyIconImgId"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:padding="10dp"
+                        android:src="@drawable/rc_history" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/historyIconImgId"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="Recharge History"
+                        android:textColor="@color/green"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/trxHistoryLayoutId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="2dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    >
+
+                    <ImageView
+                        android:id="@+id/smsIconImgId"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:padding="10dp"
+                        android:src="@drawable/trx_report" />
+
+                    <TextView
+                        android:layout_width="79dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/smsIconImgId"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="Transaction Report"
+                        android:textColor="@color/green"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/salesReportLayoutId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="5dp"
+                    android:paddingVertical="2dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    >
+
+                    <ImageView
+                        android:id="@+id/prepaidIconImgId"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:padding="10dp"
+                        android:src="@drawable/sales_report" />
+
+                    <TextView
+                        android:layout_width="79dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:layout_below="@+id/prepaidIconImgId"
+                        android:layout_centerHorizontal="true"
+                        android:text="Sales Report"
+                        android:textColor="@color/green"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/historyLayoutForSecondRowId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/historyLayoutForFirstRowId"
+            android:layout_marginTop="25dp"
+            android:paddingHorizontal="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/rBillPayLayoutId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/billPayIconImgId"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/green"
+                        android:padding="10dp"
+                        android:src="@drawable/history_icon"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/billPayIconImgId"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="Daily Report"
+                        android:textColor="@color/green"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/paymentIconImgId"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/green"
+                        android:padding="10dp"
+                        android:src="@drawable/history_icon" />
+
+                    <TextView
+                        android:layout_width="79dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/paymentIconImgId"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="Transaction Report"
+                        android:textColor="@color/green"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                app:cardCornerRadius="3dp"
+                app:cardElevation="5dp"
+                app:cardMaxElevation="5dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    >
+
+                    <ImageView
+                        android:id="@+id/balancCardIconImgId"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@color/green"
+                        android:padding="10dp"
+                        android:src="@drawable/history_icon" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/balancCardIconImgId"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center"
+                        android:text="Sales Report"
+                        android:textColor="@color/green"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_above="@id/historyLayoutForThirdRowId"
+            android:layout_marginHorizontal="25dp"
+            android:background="@color/gray" />
+
+        <RelativeLayout
+            android:id="@+id/historyLayoutForThirdRowId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingHorizontal="30dp"
+            android:paddingTop="15dp">
+
+            <RelativeLayout
+                android:id="@+id/rDailyReportLayoutId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                >
+
+                <ImageView
+                    android:id="@+id/dailyReportIconImgId"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/green"
+                    android:padding="10dp"
+                    android:src="@drawable/history_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dailyReportIconImgId"
+                    android:layout_centerHorizontal="true"
+                    android:text="Daily Report"
+                    android:textColor="@color/green"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rTotalReportLayoutId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+
+                >
+
+                <ImageView
+                    android:id="@+id/totalReportIconImgId"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/green"
+                    android:padding="10dp"
+                    android:src="@drawable/history_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/totalReportIconImgId"
+                    android:layout_centerHorizontal="true"
+                    android:text="Total Report"
+                    android:textColor="@color/green"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rResellerReportLayoutId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:id="@+id/resellerReportIconImgId"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/green"
+                    android:padding="10dp"
+                    android:src="@drawable/history_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/resellerReportIconImgId"
+                    android:layout_centerHorizontal="true"
+                    android:text="Reseller Report"
+                    android:textColor="@color/green"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

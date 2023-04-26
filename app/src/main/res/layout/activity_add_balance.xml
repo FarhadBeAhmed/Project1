@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pageNormalBackgroundColor"
+    tools:context=".Add_Balance.AddBalanceActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/parentView"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/ToolbarId"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbarHieght"
+            android:background="@color/toolbarColor"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:title="Add Balance"
+            app:titleTextColor="@color/white"
+
+            />
+        <RelativeLayout
+            android:layout_below="@+id/ToolbarId"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/seCardId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="5dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="6"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingStart="5dp"
+
+                    tools:ignore="RtlSymmetry">
+                    <EditText
+                        android:layout_weight="4.5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/Trans"
+                        android:textSize="18sp"
+                        android:hint="User Id"
+                        android:paddingStart="5dp"
+                        android:cursorVisible="true"
+                        android:textCursorDrawable="@drawable/green_cursor"
+                        tools:ignore="Autofill,HardcodedText,TextFields" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:text="Search"
+                        android:textAllCaps="false"
+                        android:background="@color/green"
+                        android:textColor="@color/white"
+                        android:textSize="17sp"
+                        tools:ignore="HardcodedText" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/seCardId"
+                >
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/add_bal_single_row"
+                    android:layout_marginTop="10dp"
+                    />
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/addBalanceNoRecFoundId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="No Record Found"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="@color/gray"
+                    tools:ignore="HardcodedText" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

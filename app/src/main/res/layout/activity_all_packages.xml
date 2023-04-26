@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PackagesFragment.AllPackagesActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/allPackToolbarId1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbarHieght"
+            android:background="@color/toolbarColor"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:title="99 Recharge"
+            app:titleTextColor="@color/white"
+
+            />
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/allPackToolbarId1"
+            android:id="@+id/horizontalCardId"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="5dp"
+            android:layout_height="wrap_content"
+
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray2">
+
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    tools:ignore="UselessParent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        tools:ignore="ScrollViewSize">
+
+
+                        <RelativeLayout
+                            android:id="@+id/gp1LayoutId"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:background="@color/white"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/gp1BtnImgId"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/gp_logo"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/gp1BtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:text="GP"
+                                android:textColor="@color/purple_700"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/robi1LayoutId"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/robi1BtnImgId"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/robi_logo2"
+
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/robi1BtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:text="Robi"
+                                android:textColor="@color/purple_700"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/banglaLink1LayoutId"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/banglaLink1BtnImgId"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/banglalink_logo2"
+
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/banglaLink1BtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:text="BanglaLink"
+                                android:textColor="@color/purple_700"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/airtel1LayoutId"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/airtel1BtnImgId"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/airtel_logo"
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/airtel1BtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:text="Airtel"
+                                android:textColor="@color/purple_700"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/teletalk1LayoutId"
+                            android:layout_width="90dp"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/teletalk1BtnImgId"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_centerHorizontal="true"
+                                android:src="@drawable/teletalk_logo"
+
+                                tools:ignore="ContentDescription" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/teletalk1BtnImgId"
+                                android:layout_centerHorizontal="true"
+                                android:text="Teletalk"
+                                android:textColor="@color/purple_700"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/main_home_contain"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/horizontalCardId"
+
+            />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

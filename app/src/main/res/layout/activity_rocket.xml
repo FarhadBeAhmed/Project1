@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MBanking.Rocket.RocketActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/pageNormalBackgroundColor">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/rocketToolbarId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightBlue"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:title="JR System"
+            app:titleTextColor="@color/white"
+
+            />
+
+        <ImageView
+            android:id="@+id/rocketLogoID"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/rocketToolbarId"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/rocket_logo" />
+
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rocketLogoID"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/typeCardIdRocket"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/radioGroupLayoutRocket"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="10dp"
+                            android:paddingStart="10dp"
+                            tools:ignore="RtlSymmetry">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:text="Type: "
+                                android:textColor="@color/black"
+                                android:textSize="20sp"
+                                tools:ignore="HardcodedText" />
+
+                            <RadioGroup
+                                android:id="@+id/id_radioTypeRocket"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+
+                                >
+
+                                <RadioButton
+                                    android:id="@+id/id_cashInRocket"
+                                    android:layout_width="110dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/radio_selector"
+                                    android:button="@color/Trans"
+                                    android:gravity="center"
+                                    android:text="Cash In"
+                                    android:textColor="@drawable/radio_text_color"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                                <RadioButton
+                                    android:id="@+id/id_sendMoneyRocket"
+                                    android:layout_width="110dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="5dp"
+                                    android:background="@drawable/radio_selector"
+                                    android:button="@color/Trans"
+                                    android:gravity="center"
+                                    android:text="Send Money"
+                                    android:textColor="@drawable/radio_text_color"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    tools:ignore="HardcodedText" />
+
+                            </RadioGroup>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/numberCardIdRocket"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/typeCardIdRocket"
+                        android:layout_marginTop="5dp">
+
+                        <LinearLayout
+
+                            android:id="@+id/numberLayoutIdRocket"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/typeCardIdRocket"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="vertical"
+                            android:paddingVertical="5dp"
+                            android:paddingLeft="10dp">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Mobile Number"
+                                android:textColor="@color/black" />
+
+                            <EditText
+                                android:id="@+id/numberIdRocket"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:background="@color/Trans"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:hint="Mobile Number"
+                                android:inputType="phone"
+                                android:maxLength="11"
+                                android:textColor="@color/black"
+                                android:textCursorDrawable="@null"
+                                android:textSize="20sp"
+                                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/inputCard2IdRocket"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/numberCardIdRocket"
+                        android:layout_marginTop="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            >
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                >
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:text="Available Balance: "
+                                    android:paddingStart="10dp"
+                                    tools:ignore="HardcodedText,RtlSymmetry" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/black"
+                                    android:gravity="right"
+                                    android:text="@string/o"
+                                    android:paddingRight="10dp"
+                                    android:paddingStart="10dp"
+                                    tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry" />
+                            </LinearLayout>
+                            <LinearLayout
+                                android:id="@+id/inputLayout2IdRocket"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:orientation="vertical"
+                                android:paddingVertical="5dp"
+                                android:paddingStart="10dp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Amount"
+                                    android:textColor="@color/black"
+                                    tools:ignore="HardcodedText" />
+
+                                <EditText
+                                    android:id="@+id/AmountIdRocket"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/Trans"
+                                    android:clickable="true"
+                                    android:focusable="true"
+                                    android:focusableInTouchMode="true"
+                                    android:hint="Enter Amount"
+                                    android:inputType="numberDecimal"
+                                    android:maxLength="4"
+                                    android:paddingVertical="3dp"
+                                    android:textColor="@color/black"
+                                    android:textCursorDrawable="@null"
+                                    android:textSize="20sp"
+                                    tools:ignore="Autofill,HardcodedText,TouchTargetSizeCheck" />
+
+
+                                <LinearLayout
+                                    android:id="@+id/id_shortageViewLayoutRocket"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:paddingVertical="5dp"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="Insufficient Balance. Shotage of:  "
+                                        android:textColor="#F5FF0000"
+                                        android:textSize="12sp"
+                                        tools:ignore="HardcodedText" />
+
+                                    <TextView
+                                        android:id="@+id/id_shortageViewRocket"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_horizontal"
+                                        android:text="@string/o"
+                                        android:textColor="#F5FF0000"
+                                        android:textSize="12dp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/inputCard2IdRocket"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp">
+
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/submitBtnIdRocket"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginHorizontal="50dp"
+                            android:layout_marginTop="50dp"
+                            android:background="@drawable/submit_btn"
+                            android:elevation="2dp"
+                            android:paddingHorizontal="30dp"
+                            android:stateListAnimator="@null"
+                            android:text="Submit"
+                            android:textColor="@color/white"
+                            android:translationZ="2dp"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+
+        </RelativeLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

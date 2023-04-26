@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:id="@+id/mBankingLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:paddingVertical="5dp">
+
+        <RelativeLayout
+            android:id="@+id/bkashLayoutId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+
+            >
+
+            <ImageView
+                android:id="@+id/bkashImgId"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bkash_logo2"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="1dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bkashImgId"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Bkash"
+                android:textColor="@color/purple_700"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rocketLayoutId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:clickable="true"
+            android:focusable="true"
+
+            >
+
+            <ImageView
+                android:id="@+id/rocketImgId"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/rocket_logo2"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="1dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rocketImgId"
+                android:layout_centerHorizontal="true"
+                android:text="Rocket"
+                android:textColor="@color/purple_700"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/nagadLayoutId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:focusable="true"
+
+            >
+
+            <ImageView
+                android:id="@+id/nagadImgId"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/nagad_logo2"
+                app:civ_border_color="#FFFFFF"
+                app:civ_border_width="1dp"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nagadImgId"
+                android:layout_centerHorizontal="true"
+                android:text="Nagad"
+                android:textColor="@color/purple_700"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PackagesFragment.airPackagesFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/packCardTabLayout1"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            app:cardCornerRadius="5dp"
+            >
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/packTabLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/white"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabIndicator="@color/Trans"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/black"
+
+                >
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/comboTabId1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:text="COMBO"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/dataTabId1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DATA"
+                    tools:ignore="HardcodedText" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/voiceTabId1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VOICE"
+                    tools:ignore="HardcodedText" />
+
+
+            </com.google.android.material.tabs.TabLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/packCardTabLayout1"
+            tools:ignore="SpeakableTextPresentCheck"/>
+
+
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="3dp"
+    android:layout_height="wrap_content">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="3dp"
+    tools:ignore="UselessParent">
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/titash_gas_logo"
+        tools:ignore="ContentDescription" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titas Gas Postpaid(Metered)"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            tools:ignore="HardcodedText,RtlSymmetry" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Company Name"
+            android:textSize="13sp"
+            android:textColor="@color/black"
+            android:paddingStart="10dp"
+            tools:ignore="HardcodedText,RtlSymmetry" />
+
+    </LinearLayout>
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>
