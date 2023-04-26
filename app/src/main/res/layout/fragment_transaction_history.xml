@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pageNormalBackgroundColor"
-    tools:context=".AllReports.TransactionHistoryFragment">
+    tools:context=".view.ui.AllReports.TransactionHistoryFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView

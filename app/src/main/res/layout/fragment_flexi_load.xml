@@ -5,7 +5,7 @@
     android:id="@+id/flexiload_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".allFragmnts.FlexiLoadFragment">
+    tools:context=".view.ui.allFragmnts.FlexiLoadFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

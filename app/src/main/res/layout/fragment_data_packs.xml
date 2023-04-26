@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".allFragmnts.DataPacksFragment">
+    tools:context=".view.ui.allFragmnts.DataPacksFragment">
 
     <TextView
         android:layout_width="match_parent"

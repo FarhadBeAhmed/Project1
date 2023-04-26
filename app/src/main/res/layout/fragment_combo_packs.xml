@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/pageNormalBackgroundColor"
-    tools:context=".allFragmnts.ComboPacksFragment">
+    tools:context=".view.ui.allFragmnts.ComboPacksFragment">
     <TextView
         android:id="@+id/comboId"
         android:layout_width="match_parent"

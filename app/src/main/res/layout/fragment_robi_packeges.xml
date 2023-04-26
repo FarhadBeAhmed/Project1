@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PackagesFragment.RobiPackegesFragment">
+    tools:context=".view.ui.PackagesFragment.RobiPackegesFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout

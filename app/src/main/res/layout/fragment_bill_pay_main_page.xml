@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
 
     android:background="@color/pageNormalBackgroundColor"
-    tools:context=".BillPayment.BillPayMainPageFragment">
+    tools:context=".view.ui.BillPayment.BillPayMainPageFragment">
 
 
     <LinearLayout
