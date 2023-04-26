@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="DialogStyle" parent="android:Theme.DeviceDefault.Light.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">Please wait…</item>
+        <item name="DialogSpotColor">@color/green</item>
+        <item name="android:background">@color/white</item>
+        <item name="DialogSpotCount">5</item>
+    </style>
+</resources>

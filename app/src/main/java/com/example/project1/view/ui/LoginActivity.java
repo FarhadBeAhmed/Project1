@@ -1,8 +1,7 @@
 package com.example.project1.view.ui;
 
-import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -15,25 +14,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.CheckBox;
 import android.widget.Toast;
-
-import com.codepath.asynchttpclient.AsyncHttpClient;
-import com.codepath.asynchttpclient.RequestParams;
-import com.codepath.asynchttpclient.callback.TextHttpResponseHandler;
 import com.example.project1.databinding.ActivityLoginBinding;
 import com.example.project1.service.FHelper.API;
 import com.example.project1.service.FHelper.ConstantValues;
 import com.example.project1.service.FHelper.User;
 import com.example.project1.R;
 import com.example.project1.viewModel.LoginViewModel;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textfield.TextInputLayout;
 import com.jaredrummler.android.device.DeviceName;
 import com.kaopiz.kprogresshud.KProgressHUD;
 
-
-import okhttp3.Headers;
+import dmax.dialog.SpotsDialog;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -45,8 +36,10 @@ public class LoginActivity extends AppCompatActivity {
     LoginViewModel loginViewModel;
 
     public static String userId = "", pass = "";
+     AlertDialog progressDialog;
+    KProgressHUD kProgressHUD;
 
-    KProgressHUD progressDialog ;
+
 
 
     @Override
@@ -71,21 +64,24 @@ public class LoginActivity extends AppCompatActivity {
         thisv = findViewById(R.id.activity_login);
 
         binding.logInBtnId.setOnClickListener(view -> {
+            controlProgressBar(true);
             loginViewModel.login(binding.usernameId.getEditText().getText().toString(),binding.passwordId.getEditText().getText().toString());
         });
         init();
     }
     public void init(){
         loginViewModel= new ViewModelProvider(this).get(LoginViewModel.class);
-        loginViewModel.getProgress().observe(this, new Observer<Integer>() {
+     /*   loginViewModel.getProgress().observe(this, new Observer<Integer>() {
             @Override
             public void onChanged(Integer integer) {
                 binding.progressBar.setVisibility(integer);
             }
-        });
+        });*/
         loginViewModel.getLogin().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
+
+                controlProgressBar(false);
                 Intent intent=null;
                 if (s.equals("0")){
                     intent = new Intent(LoginActivity.this, PinActivity.class);
@@ -112,6 +108,26 @@ public class LoginActivity extends AppCompatActivity {
             imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }
         return super.dispatchTouchEvent(ev);
+    }
+
+    public void controlProgressBar(boolean isShowProgressBar) {
+        if (isShowProgressBar) {
+            try {
+                if (this.kProgressHUD != null && this.kProgressHUD.isShowing()) {
+                    this.kProgressHUD.dismiss();
+                }
+               kProgressHUD= KProgressHUD.create(LoginActivity.this)
+                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                        .setLabel("Please wait")
+                        .setCancellable(false)
+                        .setAnimationSpeed(2)
+                        .setDimAmount(0.5f)
+                        .show();
+            } catch (Exception e) {
+            }
+        } else if (this.kProgressHUD != null && this.kProgressHUD.isShowing()) {
+            this.kProgressHUD.dismiss();
+        }
     }
 
 
