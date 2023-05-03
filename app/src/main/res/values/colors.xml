@@ -6,6 +6,7 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="light_black">#C3191919</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lightBlue">#BF7585FF</color>
     <color name="toolbarColor">#BF137801</color>
@@ -31,4 +32,5 @@
     <color name="teletalkLogoColor">#6ac537</color>
     <color name="banglalinkLogoColor">#D5571D</color>
     <color name="airtelLogoColor">#ed1d24</color>
+    <color name="appColor2">#0a4e93</color>
 </resources>

@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
@@ -14,20 +16,28 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.project1.databinding.FragmentDashboardBinding;
 import com.example.project1.service.FHelper.API;
-import com.example.project1.service.FHelper.ConstantValues;
 import com.example.project1.service.FHelper.User;
 import com.example.project1.MySingleton;
+import com.example.project1.service.ModelClasses.Pin;
+import com.example.project1.service.model.responseBody.HomeInfoResponse;
+import com.example.project1.util.CommonTask;
+import com.example.project1.util.ConstantValues;
 import com.example.project1.view.ui.PackagesFragment.AllPackagesActivity;
 
 import com.example.project1.view.ui.MBanking.Bkash.BkashActivity;
 import com.example.project1.view.ui.BillPayment.BillPaymentActivity;
 import com.example.project1.view.ui.MBanking.Nagad.NagadActivity;
 import com.example.project1.view.ui.MBanking.Rocket.RocketActivity;
+import com.example.project1.view.ui.PinActivity;
 import com.example.project1.view.ui.changePassPinActivity;
 import com.example.project1.view.ui.MobileRecharge.FlexiloadActivity;
 import com.example.project1.R;
+import com.example.project1.viewModel.HomeInfoViewModel;
+import com.example.project1.viewModel.LoginViewModel;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.kaopiz.kprogresshud.KProgressHUD;
 
 import org.json.JSONException;
 
@@ -36,22 +46,6 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class DashboardFragment extends Fragment implements View.OnClickListener {
 
-
-     User user;
-     API api;
-
-    TextView txtMarquee, ProfileName;
-    TextView net_bal, user_id;
-    SwipeRefreshLayout refreshLayout;
-
-    RelativeLayout banglalinkBtn;
-    RelativeLayout mBankingBtn;
-    RelativeLayout addBalBtn;
-    RelativeLayout billPaymentBtn;
-    RelativeLayout callingCardBtn;
-    RelativeLayout flaxiloadBtn;
-    View thisView;
-    String userID = "", password = "";
 
     BottomSheetDialog bottomSheetDialogForOperator, viewForMBanking;
 
@@ -65,68 +59,67 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
     RelativeLayout rcketButton;
     RelativeLayout nagadButton;
 
+    FragmentDashboardBinding binding;
+    KProgressHUD kProgressHUD;
+    HomeInfoViewModel homeInfoViewModel;
+    String balance="";
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        binding = FragmentDashboardBinding.inflate(inflater,container,false);
 
-        flaxiloadBtn = view.findViewById(R.id.flaxiLayoutId);
-        banglalinkBtn = view.findViewById(R.id.blLayoutId);
-        mBankingBtn = view.findViewById(R.id.mBankingLayoutId);
 
-        addBalBtn = view.findViewById(R.id.addBalLayoutId);
-        billPaymentBtn = view.findViewById(R.id.billLayoutId);
-        callingCardBtn = view.findViewById(R.id.callingLayoutId);
-        net_bal = view.findViewById(R.id.net_balId);
-        user_id = view.findViewById(R.id.ID_profile_name);
-        refreshLayout = view.findViewById(R.id.reloadId);
+        binding.flaxiLayoutId.setOnClickListener(this);
+        binding.blLayoutId.setOnClickListener(this);
 
-        ProfileName = view.findViewById(R.id.dashboard_profile_name);
+        binding.addBalLayoutId.setOnClickListener(this);
+        binding.billLayoutId.setOnClickListener(this);
+        binding.callingLayoutId.setOnClickListener(this);
 
-        user = new User();
-        api = ConstantValues.getAPI();
-        thisView = view.findViewById(R.id.fullView);
+        binding.marqueeTextId.setSelected(true);
+        homeInfoViewModel=  new ViewModelProvider(this).get(HomeInfoViewModel.class);
+        if (CommonTask.getPreferences(getContext(), ConstantValues.user.USER_ID)!=null&& PinActivity.pinNumber.getPin()!=null){
 
-        flaxiloadBtn.setOnClickListener(this);
-        banglalinkBtn.setOnClickListener(this);
-        mBankingBtn.setOnClickListener(this);
-
-        addBalBtn.setOnClickListener(this);
-        billPaymentBtn.setOnClickListener(this);
-        callingCardBtn.setOnClickListener(this);
-
-        txtMarquee = view.findViewById(R.id.marqueeTextId);
-        txtMarquee.setSelected(true);
-        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            controlProgressBar(true);
+            homeInfoViewModel.homeInfo(CommonTask.getPreferences(getContext(), ConstantValues.user.USER_ID),PinActivity.pinNumber.getPin());
+        }
+       binding.reloadId.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getInfo();
+                controlProgressBar(true);
+                homeInfoViewModel.homeInfo(CommonTask.getPreferences(getContext(), ConstantValues.user.USER_ID), PinActivity.pinNumber.getPin());
+                init();
             }
         });
 
-        getInfo();
 
 
-        return view;
+        init();
+
+
+        return binding.getRoot();
     }
 
+
     @SuppressLint("SetTextI18n")
-    private void getInfo() {
-        MySingleton.getInstance(getContext()).addToRequestQueue(api.home_info("test",1234,response -> {
-            try {
-                if (response.getInt(ConstantValues.ERROR)==0){
-                    user_id.setText(response.getString("user_id"));
-                    net_bal.setText(response.getString("balance"));
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
+    private void init() {
+        homeInfoViewModel.getHomeInfo().observe(getViewLifecycleOwner(), new Observer<HomeInfoResponse>() {
+            @Override
+            public void onChanged(HomeInfoResponse homeInfoResponse) {
+
+                balance=homeInfoResponse.getBalance();
+                controlProgressBar(false);
+                binding.reloadId.setRefreshing(false);
+                binding.IDProfileName.setText(homeInfoResponse.getUserId()+" (Level "+homeInfoResponse.getLevel()+")");
+                binding.netBalId.setText(homeInfoResponse.getBalance());
+                binding.dashboardProfileName.setText("SMS ID: "+homeInfoResponse.getMobile());
+
             }
-        }));
+        });
 
 
-        refreshLayout.setRefreshing(false);
 
     }
 
@@ -137,7 +130,9 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         Intent intent = null;
         switch (id) {
             case R.id.flaxiLayoutId:
-                startActivity(new Intent(getContext(), FlexiloadActivity.class));
+                intent=new Intent(getContext(), FlexiloadActivity.class);
+                intent.putExtra(ConstantValues.Flexiload.BALANCE,balance);
+                startActivity(intent);
                 break;
             case R.id.addBalLayoutId:
                 new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
@@ -150,10 +145,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
             case R.id.blLayoutId:
                 showBottomSheetDialog();
                 break;
-            case R.id.mBankingLayoutId:
-                showBottomSheetDialogForMbanking();
-                //startActivity(new Intent(getContext(), MBankingActivity.class));
-                break;
+
 
             case R.id.billLayoutId:
                 startActivity(new Intent(getContext(), BillPaymentActivity.class));
@@ -248,6 +240,26 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
 
         viewForMBanking.show();
+    }
+
+    public void controlProgressBar(boolean isShowProgressBar) {
+        if (isShowProgressBar) {
+            try {
+                if (this.kProgressHUD != null && this.kProgressHUD.isShowing()) {
+                    this.kProgressHUD.dismiss();
+                }
+                kProgressHUD= KProgressHUD.create(requireContext())
+                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                        .setLabel("Please wait")
+                        .setCancellable(false)
+                        .setAnimationSpeed(2)
+                        .setDimAmount(0.5f)
+                        .show();
+            } catch (Exception e) {
+            }
+        } else if (this.kProgressHUD != null && this.kProgressHUD.isShowing()) {
+            this.kProgressHUD.dismiss();
+        }
     }
 
 

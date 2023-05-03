@@ -38,4 +38,25 @@ public class LoginRepo {
         });
 
     }
+    public void pinRemote(LoginRequestBody loginRequestBody, ILoginResponse iLoginResponse){
+        apiService= RetrofitClientInstance.getRetroInstance().create(ApiService.class);
+        Call<LoginResponse> initiateLogin=apiService.pinChk(loginRequestBody);
+        initiateLogin.enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                if (response.isSuccessful()){
+                    iLoginResponse.onResponse(response.body());
+                }else{
+                    iLoginResponse.onFailure(new Throwable(response.message()));
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                iLoginResponse.onFailure(t);
+            }
+        });
+
+    }
 }

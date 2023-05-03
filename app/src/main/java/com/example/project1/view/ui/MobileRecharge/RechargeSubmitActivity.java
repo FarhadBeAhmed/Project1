@@ -1,96 +1,71 @@
 package com.example.project1.view.ui.MobileRecharge;
 
-import android.annotation.SuppressLint;
-import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
-import androidx.fragment.app.Fragment;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.project1.service.FHelper.API;
-import com.example.project1.service.FHelper.ConstantValues;
-import com.example.project1.service.FHelper.User;
 import com.example.project1.R;
+import com.example.project1.databinding.ActivityRechargeSubmitBinding;
+import com.example.project1.service.FHelper.API;
+import com.example.project1.service.FHelper.User;
+import com.example.project1.util.ConstantValues;
 
-public class RechargeSubmitFragment extends Fragment {
+public class RechargeSubmitActivity extends AppCompatActivity {
 
-    EditText pin;
-    ImageButton submit;
+
     String number, amount, type, operator,newBalance;
     double charge = 00, totalAmount = 00;
-    TextView numberView, amountView, chargeView, totalView;
-    static API api;
-    static User user;
 
-    public RechargeSubmitFragment() {
-    }
+
+    ActivityRechargeSubmitBinding binding;
+
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+        binding=ActivityRechargeSubmitBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_recharge_submit, container, false);
-    }
+        binding.idSubmit.setClickable(false);
+        binding.idSubmit.setBackgroundResource(R.drawable.ic_baseline_arrow_forward_disable);
+        binding.idSubmit.setOnClickListener(this::buttonClicked);
+        Intent intent = getIntent();
+        if (intent!=null){
+            number=intent.getStringExtra(ConstantValues.Flexiload.NUMBER);
+            amount=intent.getStringExtra(ConstantValues.Flexiload.AMOUNT);
+            type=intent.getStringExtra(ConstantValues.Flexiload.TYPE);
+            operator=intent.getStringExtra(ConstantValues.Flexiload.OPERATOR);
+            newBalance=intent.getStringExtra(ConstantValues.Flexiload.NEW_BALANCE);
 
-    @SuppressLint("SetTextI18n")
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        pin = view.findViewById(R.id.id_pin);
-        submit = view.findViewById(R.id.id_submit);
-        numberView = view.findViewById(R.id.id_text_view_number);
-        amountView = view.findViewById(R.id.id_amount_txtView);
-        chargeView = view.findViewById(R.id.id_chargeTxtView);
-        totalView = view.findViewById(R.id.id_totalAmountTxtView);
-        api = ConstantValues.getAPI();
-        user = new User();
-
-        submit.setClickable(false);
-        submit.setBackgroundResource(R.drawable.ic_baseline_arrow_forward_disable);
-        submit.setOnClickListener(this::buttonClicked);
-
-        Bundle bundle = this.getArguments();
-
-        if (bundle.getString("number") != null) {
-            number = bundle.getString("number");
-            amount = bundle.getString("amount");
-            type = bundle.getString("type");
-            operator = bundle.getString("operator");
-            newBalance = bundle.getString("newBalance");
-            numberView.setText(number);
-            amountView.setText(amount);
+            binding.idTextViewNumber.setText(number);
+            binding.idAmountTxtView.setText(amount);
         }
 
-        pin.addTextChangedListener(new TextWatcher() {
+        binding.idPin.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                String txt = pin.getText().toString();
+                String txt =  binding.idPin.getText().toString();
                 if (charSequence.length() >= 4) {
-                    submit.setClickable(true);
-                    submit.setBackgroundResource(R.drawable.ic_baseline_arrow_forward_24);
+                    binding.idSubmit.setClickable(true);
+                    binding.idSubmit.setBackgroundResource(R.drawable.ic_baseline_arrow_forward_24);
                 } else {
-                    submit.setClickable(false);
-                    submit.setBackgroundResource(R.drawable.ic_baseline_arrow_forward_disable);
+                    binding.idSubmit.setClickable(false);
+                    binding.idSubmit.setBackgroundResource(R.drawable.ic_baseline_arrow_forward_disable);
                 }
             }
 
@@ -99,15 +74,15 @@ public class RechargeSubmitFragment extends Fragment {
             }
         });
 
-        chargeView.setText("+" + charge + "৳");
+        binding.idChargeTxtView.setText("+" + charge + "৳");
         totalAmount = Integer.parseInt(amount) + charge;
-        totalView.setText(totalAmount + "৳");
-
+        binding.idTotalAmountTxtView.setText(totalAmount + "৳");
     }
+
 
     @SuppressLint({"ClickableViewAccessibility", "SetTextI18n"})
     private void buttonClicked(View view) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        AlertDialog.Builder builder = new AlertDialog.Builder(RechargeSubmitActivity.this);
         View dialogView = getLayoutInflater().inflate(R.layout.recharge_submit_dialogue, null);
 
         AppCompatButton submitBtn = dialogView.findViewById(R.id.id_submitBtn);
@@ -152,8 +127,8 @@ public class RechargeSubmitFragment extends Fragment {
 
         String flexiAmount = amount;
         String flexiNumber = number;
-        String user_id = user.getUsername();
-        String pass = user.getPassword();
+        String user_id = "user.getUsername()";
+        String pass = "user.getPassword()";
 
         if (!flexiAmount.equals("") &&  !flexiNumber.equals("") && !user_id.equals("") && !pass.equals("") ){
 

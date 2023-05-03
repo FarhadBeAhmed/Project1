@@ -11,85 +11,98 @@
     app:cardMaxElevation="5dp"
     app:cardCornerRadius="5dp">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="5dp"
         android:padding="5dp"
         >
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+
+        <ImageView
+            android:id="@+id/loImgId"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:padding="5dp"
+            android:src="@drawable/gp_logo"
+            app:layout_constraintEnd_toStartOf="@+id/id_packValueLayout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:id="@+id/id_packValueLayout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:paddingStart="5dp"
-            tools:ignore="RtlSymmetry,UselessParent">
-
-            <ImageView
-                android:id="@+id/loImgId"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:padding="5dp"
-                android:src="@drawable/gp_logo"
-                tools:ignore="ContentDescription" />
-            <LinearLayout
-                android:id="@+id/id_packValueLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:text="Tk"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    tools:ignore="HardcodedText" />
-                <TextView
-                    android:id="@+id/id_packValue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:text="৬৪"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    tools:ignore="HardcodedText" />
-            </LinearLayout>
-
+            android:layout_marginStart="271dp"
+            android:layout_marginBottom="6dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/id_packActiveBtn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/loImgId"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/id_value"
-                android:layout_width="280dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/id_packValueLayout"
-                android:layout_marginTop="10dp"
-                android:text="228 TK 410 MIN+500 MB+800 SMS 21 Days 228 Tk"
+                android:layout_marginEnd="10dp"
+                android:text="Tk"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="25sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
 
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/id_packActiveBtn"
+            <TextView
+                android:id="@+id/id_packValue"
                 android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:layout_below="@+id/loImgId"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/package_layout_background"
-                android:text="Active"
-                android:textAllCaps="false"
-                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="৬৪"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
 
 
-        </RelativeLayout>
+        <TextView
+            android:id="@+id/id_value"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/id_packValueLayout"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="12dp"
+            android:text="228 TK 410 MIN+500 MB+800 SMS 21 Days 228 Tk"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/id_packActiveBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loImgId"
+            tools:ignore="HardcodedText" />
 
 
-    </RelativeLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/id_packActiveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_below="@+id/loImgId"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/package_layout_background"
+            android:text="Active"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/id_value"
+            app:layout_constraintTop_toBottomOf="@+id/id_packValueLayout"
+            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

@@ -18,8 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project1"
         android:usesCleartextTraffic="true"
-        tools:replace="android:icon"
-        tools:ignore="UnusedAttribute">
+        tools:ignore="UnusedAttribute"
+        tools:replace="android:icon">
+        <activity
+            android:name=".view.ui.MobileRecharge.RechargeSubmitActivity"
+            android:exported="false" />
         <activity
             android:name=".view.ui.Add_Balance.AddBalanceActivity"
             android:exported="false" />
@@ -37,16 +40,18 @@
             android:exported="false" />
         <activity
             android:name=".view.ui.SplashActivity"
-            android:exported="true" />
-        <activity
-            android:name=".view.ui.LoginActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize" >
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.ui.LoginActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+
         </activity>
         <activity
             android:name=".view.ui.MobileRecharge.FlexiloadActivity"
@@ -75,15 +80,12 @@
         <activity
             android:name=".view.ui.HistoryActivity"
             android:exported="true" />
-
         <activity
             android:name=".view.ui.DashboardActivity"
             android:exported="false" />
         <activity
             android:name=".view.ui.PinActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".view.ui.SignUpPage"
             android:exported="true" />

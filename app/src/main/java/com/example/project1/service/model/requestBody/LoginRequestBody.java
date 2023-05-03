@@ -7,10 +7,13 @@ public class LoginRequestBody {
     private String username;
     @SerializedName("password")
     private String password;
+    @SerializedName("deviceID")
+    private String deviceID;
 
-    public LoginRequestBody(String username, String password) {
+    public LoginRequestBody(String username, String password, String deviceID) {
         this.username = username;
         this.password = password;
+        this.deviceID = deviceID;
     }
 
     public String getUsername() {
@@ -27,5 +30,13 @@ public class LoginRequestBody {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getDeviceID() {
+        return deviceID;
+    }
+
+    public void setDeviceID(String deviceID) {
+        this.deviceID = deviceID;
     }
 }

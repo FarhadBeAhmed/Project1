@@ -4,32 +4,345 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pageNormalBackgroundColor"
     tools:context=".view.ui.MobileRecharge.FlexiloadActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
 
-        <include
-            android:id="@+id/flexiloadToolbarId"
-            layout="@layout/toolbar"
+    <include
+        android:id="@+id/flexiloadToolbarId"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/flexiload_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flexiloadToolbarId">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView7"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/numberLayoutId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="5dp"
+                android:paddingRight="8dp"
+                android:weightSum="4"
+                tools:ignore="RtlHardcoded,RtlSymmetry">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.8"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="For"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        tools:ignore="HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/numberId"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/Trans"
+                        android:clickable="true"
+                        android:cursorVisible="true"
+                        android:drawablePadding="10dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:hint="Mobile Number"
+                        android:inputType="phone"
+                        android:maxLength="15"
+                        android:padding="3dp"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null"
+                        android:textSize="@dimen/_15sdp"
+                        tools:ignore="HardcodedText,RtlSymmetry,TouchTargetSizeCheck" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/mLogosId"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".6"
+                    android:clickable="true"
+                    android:focusable="true"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck">
+
+                    <ImageView
+                        android:id="@+id/operatorLogoId"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="7dp"
+                        tools:ignore="ContentDescription" />
+
+                    <ImageView
+                        android:id="@+id/operatorEditLogoId"
+                        android:layout_width="15sp"
+                        android:layout_height="15sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/mArrowId"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".6"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck">
+
+                    <ImageButton
+                        android:id="@+id/contactBtnLogoId"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/Trans"
+                        android:padding="@dimen/_2sdp"
+                        android:src="@drawable/ic_baseline_contact_phone_black"
+                        tools:ignore="ContentDescription" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView7">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Select Type :"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+
+                    />
+
+                <RadioGroup
+                    android:id="@+id/operatorsId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="horizontal"
+
+                    >
+
+                    <RadioButton
+                        android:id="@+id/radioPrepaidBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/radio_selector"
+                        android:button="@color/Trans"
+                        android:gravity="center"
+                        android:paddingHorizontal="5dp"
+                        android:text="Prepaid"
+                        android:textColor="@drawable/radio_text_color"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <RadioButton
+                        android:id="@+id/radioPostBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/radio_selector"
+                        android:button="@color/Trans"
+                        android:gravity="center"
+                        android:paddingHorizontal="5dp"
+                        android:text="Postpaid"
+                        android:textColor="@drawable/radio_text_color"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <RadioButton
+                        android:id="@+id/radioSkittoBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/radio_selector"
+                        android:button="@color/Trans"
+                        android:gravity="center"
+                        android:paddingHorizontal="5dp"
+                        android:text="Skitto"
+                        android:textColor="@drawable/radio_text_color"
+                        android:visibility="gone"
+                        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView9">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingVertical="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Available Balance:"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/id_netBalance"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:gravity="right"
+                        android:text="@string/o"
+                        tools:ignore="RtlHardcoded" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:paddingVertical="5dp">
+
+
+                    <EditText
+                        android:id="@+id/AmountId"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="@color/Trans"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:gravity="center"
+                        android:hint="Amount"
+                        android:inputType="numberDecimal"
+                        android:maxLength="4"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@null"
+                        tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+
+                        android:layout_toEndOf="@+id/AmountId"
+                        android:src="@drawable/taka_icon" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/id_shortageViewLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Insufficient Balance. Shotage of:  "
+                        android:textColor="#F5FF0000"
+                        android:textSize="12sp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/id_shortageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="@string/o"
+                        android:textColor="#F5FF0000"
+                        android:textSize="12dp"
+                        tools:ignore="SpUsage" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
 
         <RelativeLayout
-            android:layout_below="@+id/flexiloadToolbarId"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-            <FrameLayout
-                android:id="@+id/id_fragment_Container"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                />
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:paddingVertical="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView8"
+            tools:ignore="ObsoleteLayoutParam">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/flexiSubmitId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/submit_btn"
+                android:elevation="2dp"
+                android:paddingHorizontal="@dimen/_30sdp"
+                android:stateListAnimator="@null"
+                android:text="Submit"
+                android:textColor="@color/white"
+                android:translationZ="2dp"
+                tools:ignore="HardcodedText" />
+
+
         </RelativeLayout>
 
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
