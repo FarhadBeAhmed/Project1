@@ -12,8 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.project1.service.CommonUrl;
 import com.example.project1.service.ModelClasses.PackagesModel;
 import com.example.project1.R;
+import com.example.project1.service.model.responseBody.PackDatum;
+import com.example.project1.service.model.responseBody.PackageResponse;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -21,12 +24,12 @@ import java.util.ArrayList;
 public class PackagesAdapter extends RecyclerView.Adapter<PackagesAdapter.ViewHolder> {
 
     Context context;
-    ArrayList<PackagesModel>packagesArrayList;
+    ArrayList<PackDatum>packagesArrayList;
     private LayoutInflater mInflater;
     @LayoutRes
     int resLayout;
 
-    public PackagesAdapter(Context context, ArrayList<PackagesModel> packagesArrayList, @LayoutRes int resLayout) {
+    public PackagesAdapter(Context context, ArrayList<PackDatum> packagesArrayList, @LayoutRes int resLayout) {
         this.context = context;
         this.packagesArrayList = packagesArrayList;
         this.resLayout = resLayout;
@@ -41,8 +44,14 @@ public class PackagesAdapter extends RecyclerView.Adapter<PackagesAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        PackagesModel packagesModel=packagesArrayList.get(position);
-        Picasso.get().load("").into(holder.opImg);
+        PackDatum packagesModel=packagesArrayList.get(position);
+        holder.amount.setText(packagesModel.getAmount());
+        holder.value.setText(packagesModel.getDescription());
+
+        Picasso.get()  //Here, this is context.
+                .load(CommonUrl.BASE_URL+"/images/"+packagesModel.getImg()+".jpg")  //Url of the image to load.
+                .into(holder.opImg);
+
         holder.packActiveBtn.setOnClickListener(view -> {
 
         });

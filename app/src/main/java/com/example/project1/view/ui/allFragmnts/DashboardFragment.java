@@ -156,32 +156,32 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
             case R.id.gpLayoutId:
                 bottomSheetDialogForOperator.cancel();
                 intent = new Intent(getContext(), AllPackagesActivity.class);
-                intent.putExtra("data", "gp");
+                intent.putExtra("data", "Grameen");
                 //intent= new Intent(getContext(), GPPackageActivity.class);
                 startActivity(intent);
                 break;
             case R.id.robiLayoutId:
                 bottomSheetDialogForOperator.cancel();
                 intent = new Intent(getContext(), AllPackagesActivity.class);
-                intent.putExtra("data", "robi");
+                intent.putExtra("data", "Robi");
                 startActivity(intent);
                 break;
             case R.id.BLLayoutId:
                 bottomSheetDialogForOperator.cancel();
                 intent = new Intent(getContext(), AllPackagesActivity.class);
-                intent.putExtra("data", "bl");
+                intent.putExtra("data", "Banglalink");
                 startActivity(intent);
                 break;
             case R.id.airLayoutId:
                 bottomSheetDialogForOperator.cancel();
                 intent = new Intent(getContext(), AllPackagesActivity.class);
-                intent.putExtra("data", "air");
+                intent.putExtra("data", "Airtel");
                 startActivity(intent);
                 break;
             case R.id.telLayoutId:
                 bottomSheetDialogForOperator.cancel();
                 intent = new Intent(getContext(), AllPackagesActivity.class);
-                intent.putExtra("data", "tel");
+                intent.putExtra("data", "Teletalk");
                 startActivity(intent);
                 break;
             case R.id.bkashLayoutId:

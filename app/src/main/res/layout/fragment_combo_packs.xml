@@ -6,16 +6,9 @@
     android:orientation="vertical"
     android:background="@color/pageNormalBackgroundColor"
     tools:context=".view.ui.allFragmnts.ComboPacksFragment">
-    <TextView
-        android:id="@+id/comboId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="This is Combo package"
-        android:clickable="true"
-        tools:ignore="HardcodedText"
-        android:focusable="true" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/comboRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/package_single_row"

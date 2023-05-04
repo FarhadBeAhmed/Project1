@@ -21,9 +21,6 @@
         tools:ignore="UnusedAttribute"
         tools:replace="android:icon">
         <activity
-            android:name=".view.ui.MobileRecharge.RechargeSubmitActivity"
-            android:exported="false" />
-        <activity
             android:name=".view.ui.Add_Balance.AddBalanceActivity"
             android:exported="false" />
         <activity
