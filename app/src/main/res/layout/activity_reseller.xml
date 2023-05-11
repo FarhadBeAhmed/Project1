@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/resellerActivity"
+    tools:context=".view.ui.ResellerActivity">
+
+    <include
+        android:id="@+id/mainToolbarId"
+        layout="@layout/toolbar"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@drawable/reseller_edit_text_back"
+        android:hint="Name"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingBottom="5dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused=".5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainToolbarId"
+        tools:ignore="HardcodedText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/baseline_person_24"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/appColor2"
+            android:fontFamily="@font/andada"
+            android:inputType="textWebEditText"
+            android:maxLines="1"
+            android:paddingStart="10dp"
+            android:textColor="@color/text_color"
+            tools:ignore="RtlSymmetry,UnusedAttribute" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mobile"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:background="@drawable/reseller_edit_text_back"
+        android:hint="mobile"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingBottom="5dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused=".5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        tools:ignore="HardcodedText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/baseline_phone_iphone_24"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/appColor2"
+            android:fontFamily="@font/andada"
+            android:inputType="textWebEditText"
+            android:maxLines="1"
+            android:paddingStart="10dp"
+            android:textColor="@color/text_color"
+            tools:ignore="RtlSymmetry,UnusedAttribute" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/level"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/reseller_edit_text_back"
+        android:hint="Address"
+        android:paddingHorizontal="@dimen/_5sdp"
+        android:paddingBottom="5dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused=".5dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mobile"
+        tools:ignore="HardcodedText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/baseline_arrow_right_24"
+            android:drawablePadding="5dp"
+            android:drawableTint="@color/appColor2"
+            android:fontFamily="@font/andada"
+            android:inputType="textWebEditText"
+            android:maxLines="1"
+            android:paddingStart="10dp"
+            android:textColor="@color/text_color"
+            tools:ignore="RtlSymmetry,UnusedAttribute" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/radioGroupLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/level">
+
+        <TextView
+            android:id="@+id/radioTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="Account\nType"
+            android:textAlignment="center"
+            android:textSize="@dimen/_11sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/operatorsId"
+            app:layout_constraintHorizontal_bias="0.18"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+
+        <RadioGroup
+            android:id="@+id/operatorsId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/radioTag"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/level1"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_margin="5dp"
+                android:background="@drawable/radio_selector"
+                android:button="@color/Trans"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text="Customer"
+                android:textColor="@drawable/radio_text_color"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/level2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_margin="5dp"
+                android:background="@drawable/radio_selector"
+                android:button="@color/Trans"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text="Reseller"
+                android:textColor="@drawable/radio_text_color"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+            <RadioButton
+                android:id="@+id/level3"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_margin="5dp"
+                android:background="@drawable/radio_selector"
+                android:button="@color/Trans"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_10sdp"
+                android:text="Agent"
+                android:textColor="@drawable/radio_text_color"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+        </RadioGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_back"
+        android:fontFamily="@font/andada"
+        android:gravity="center"
+        android:text="Sign In"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupLayout"
+        tools:ignore="HardcodedText" />
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

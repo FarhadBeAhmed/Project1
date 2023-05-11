@@ -19,20 +19,17 @@ public class MobileRechargeRequest {
     @SerializedName("amount")
     @Expose
     private String amount;
-    @SerializedName("otc")
-    @Expose
-    private String otc;
     @SerializedName("pin")
     @Expose
     private String pin;
 
-    public MobileRechargeRequest(String user_id, String type, String nmp, String mobile, String amount, String otc, String pin) {
+
+    public MobileRechargeRequest(String user_id, String type, String nmp, String mobile, String amount, String pin) {
         this.user_id = user_id;
         this.type = type;
         this.nmp = nmp;
         this.mobile = mobile;
         this.amount = amount;
-        this.otc = otc;
         this.pin = pin;
     }
 
@@ -74,14 +71,6 @@ public class MobileRechargeRequest {
 
     public void setAmount(String amount) {
         this.amount = amount;
-    }
-
-    public String getOtc() {
-        return otc;
-    }
-
-    public void setOtc(String otc) {
-        this.otc = otc;
     }
 
     public String getPin() {

@@ -1,6 +1,7 @@
 package com.example.project1.view.adaptars;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import com.example.project1.service.ModelClasses.PackagesModel;
 import com.example.project1.R;
 import com.example.project1.service.model.responseBody.PackDatum;
 import com.example.project1.service.model.responseBody.PackageResponse;
+import com.example.project1.util.ConstantValues;
+import com.example.project1.view.ui.MobileRecharge.FlexiloadActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -53,7 +56,10 @@ public class PackagesAdapter extends RecyclerView.Adapter<PackagesAdapter.ViewHo
                 .into(holder.opImg);
 
         holder.packActiveBtn.setOnClickListener(view -> {
-
+           Intent intent=new Intent(view.getContext(), FlexiloadActivity.class);
+            intent.putExtra(ConstantValues.Flexiload.AMOUNT,packagesModel.getAmount());
+            intent.putExtra(ConstantValues.Flexiload.PACK,packagesModel.getDescription());
+            view.getContext().startActivity(intent);
         });
     }
 

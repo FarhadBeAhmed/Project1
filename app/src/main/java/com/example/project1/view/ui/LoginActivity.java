@@ -32,6 +32,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.jaredrummler.android.device.DeviceName;
 import com.kaopiz.kprogresshud.KProgressHUD;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import dmax.dialog.SpotsDialog;
 
 public class LoginActivity extends AppCompatActivity {
@@ -43,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
     public static String userId = "", pass = "";
      AlertDialog progressDialog;
     KProgressHUD kProgressHUD;
+    public static String savedUser="";
+    public static String savedPass="";
 
 
     Intent intent=null;
@@ -87,7 +90,9 @@ public class LoginActivity extends AppCompatActivity {
         init();
     }
 
+
     public void init(){
+        binding.rememberMe.setChecked(true);
         loginViewModel= new ViewModelProvider(this).get(LoginViewModel.class);
      /*   loginViewModel.getProgress().observe(this, new Observer<Integer>() {
             @Override
@@ -100,15 +105,26 @@ public class LoginActivity extends AppCompatActivity {
             public void onChanged(String s) {
 
                 controlProgressBar(false);
-                if (s.equals("0")){
-                    CommonTask.savePreferences(LoginActivity.this, ConstantValues.user.USER_ID,userId);
-                    CommonTask.savePreferences(LoginActivity.this, ConstantValues.user.PASSWORD,pass);
-                    intent = new Intent(LoginActivity.this, PinActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                if (!s.equals("")) {
+                    if (s.equals("0")) {
+                        if (binding.rememberMe.isChecked()) {
+                            CommonTask.savePreferences(LoginActivity.this, ConstantValues.user.USER_ID, userId);
+                            CommonTask.savePreferences(LoginActivity.this, ConstantValues.user.PASSWORD, pass);
+                        }else {
+                            savedUser=userId;
+                            savedPass=pass;
+                        }
+                        intent = new Intent(LoginActivity.this, PinActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
 
-                }else {
-                    Toast.makeText(LoginActivity.this, s, Toast.LENGTH_SHORT).show();
+                    } else {
+                        new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.ERROR_TYPE)
+                                .setTitleText("Wrong")
+                                .setContentText(s)
+                                .setConfirmText("OK")
+                                .show();
+                    }
                 }
 
             }

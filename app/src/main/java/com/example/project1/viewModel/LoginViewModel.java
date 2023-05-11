@@ -8,26 +8,26 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.project1.service.model.requestBody.LoginRequestBody;
 import com.example.project1.service.model.responseBody.LoginResponse;
+import com.example.project1.service.model.responseBody.PinChkResponse;
 import com.example.project1.service.repository.ILoginResponse;
+import com.example.project1.service.repository.IPinchk;
 import com.example.project1.service.repository.LoginRepo;
 
 
 public class LoginViewModel extends ViewModel {
     MutableLiveData<Integer>mProgressbarLiveData=new MutableLiveData<>();
     MutableLiveData<String>mLoginLiveData=new MutableLiveData<>();
-    MutableLiveData<String>mPinLiveData=new MutableLiveData<>();
+    MutableLiveData<PinChkResponse>mPinLiveData=new MutableLiveData<>();
 
     LoginRepo loginRepo;
 
     public LoginViewModel() {
         mLoginLiveData.postValue("");
-        mPinLiveData.postValue("Enter Pin");
         mProgressbarLiveData.postValue(View.INVISIBLE);
         loginRepo=new LoginRepo();
     }
     public void login(String username,String pass,String device){
         mProgressbarLiveData.postValue(View.VISIBLE);
-        mLoginLiveData.postValue("Checking..");
         loginRepo.loginRemote(new LoginRequestBody(username, pass, device), new ILoginResponse() {
             @Override
             public void onResponse(LoginResponse loginResponse) {
@@ -49,22 +49,20 @@ public class LoginViewModel extends ViewModel {
     }
     public void pin(String username,String pass,String device){
         mProgressbarLiveData.postValue(View.VISIBLE);
-        mPinLiveData.postValue("Checking..");
-        loginRepo.pinRemote(new LoginRequestBody(username, pass,device), new ILoginResponse() {
+        loginRepo.pinRemote(new LoginRequestBody(username, pass,device), new IPinchk() {
             @Override
-            public void onResponse(LoginResponse loginResponse) {
+            public void onResponse(PinChkResponse loginResponse) {
                 mProgressbarLiveData.postValue(View.INVISIBLE);
                 if (loginResponse.getError()==0) {
-                    mPinLiveData.postValue(loginResponse.getError().toString());
+                    mPinLiveData.postValue(loginResponse);
                 }else {
-                    mPinLiveData.postValue(loginResponse.getMsg().toString());
+                    mPinLiveData.postValue(loginResponse);
                 }
             }
 
             @Override
             public void onFailure(Throwable t) {
                 mProgressbarLiveData.postValue(View.INVISIBLE);
-                mPinLiveData.postValue("Login Failed due to "+t.getLocalizedMessage());
 
             }
         });
@@ -76,7 +74,7 @@ public class LoginViewModel extends ViewModel {
     public LiveData<String>getLogin(){
         return mLoginLiveData;
     }
-    public LiveData<String>getPin(){
+    public LiveData<PinChkResponse>getPin(){
         return mPinLiveData;
     }
 

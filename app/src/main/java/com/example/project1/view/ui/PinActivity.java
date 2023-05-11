@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.project1.databinding.ActivityPinBinding;
 import com.example.project1.R;
 import com.example.project1.service.ModelClasses.Pin;
+import com.example.project1.service.model.responseBody.PinChkResponse;
 import com.example.project1.util.CheckInternetConnection;
 import com.example.project1.util.CommonTask;
 import com.example.project1.util.ConstantValues;
@@ -49,20 +50,21 @@ public class PinActivity extends AppCompatActivity implements View.OnClickListen
 
     public void init(){
         loginViewModel= new ViewModelProvider(this).get(LoginViewModel.class);
-        loginViewModel.getPin().observe(this, new Observer<String>() {
+        loginViewModel.getPin().observe(this, new Observer<PinChkResponse>() {
             @Override
-            public void onChanged(String s) {
+            public void onChanged(PinChkResponse response) {
 
                 controlProgressBar(false);
                 Intent intent;
-                if (s.equals("0")){
+                if (response.getError()==0){
                     pinNumber.setPin(Objects.requireNonNull(binding.pinEditTextId.getText()).toString());
+                    pinNumber.setTemp_pin(response.getTemp_pin());
                     intent = new Intent(PinActivity.this, DashboardActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
 
                 }else {
-                    Toast.makeText(PinActivity.this, s, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PinActivity.this, response.getMsg(), Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -91,6 +93,10 @@ public class PinActivity extends AppCompatActivity implements View.OnClickListen
                     snackbar.getView().setBackgroundColor(Color.RED);
                     snackbar.show();
                 }
+            }else if (!LoginActivity.userId.equals("")){
+                controlProgressBar(true);
+                loginViewModel.pin(LoginActivity.userId,binding.pinEditTextId.getText().toString(),"0");
+
             }
         }
     }

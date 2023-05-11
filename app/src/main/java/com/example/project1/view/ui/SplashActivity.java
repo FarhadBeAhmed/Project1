@@ -36,6 +36,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 
+import com.example.project1.service.CommonUrl;
 import com.example.project1.service.FHelper.User;
 import com.example.project1.R;
 import com.example.project1.util.CheckInternetConnection;
@@ -94,19 +95,21 @@ public class SplashActivity extends AppCompatActivity {
         deviceIdViewModel.getData().observe(this, deviceIdResponse -> {
             if (deviceIdResponse.getError() == 0) {
                 userIDFromDevice = deviceIdResponse.getUserId();
+
                 if (!CommonTask.getPreferences(SplashActivity.this, ConstantValues.user.USER_ID).equals("") && !CommonTask.getPreferences(SplashActivity.this, ConstantValues.user.PASSWORD).equals("")) {
                     if (CommonTask.getPreferences(SplashActivity.this, ConstantValues.user.USER_ID).equals(userIDFromDevice)) {
                         intent = new Intent(SplashActivity.this, PinActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
-                    }else {
-                        CommonTask.snackBar(getApplicationContext(), findViewById(R.id.splashId),"Your device is already registered with another User");
+                    } else {
+                        CommonTask.snackBar(getApplicationContext(), findViewById(R.id.splashId), "Your device is already registered with another User");
                     }
                 } else {
                     intent = new Intent(SplashActivity.this, LoginActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
+
             } else {
                 intent = new Intent(SplashActivity.this, LoginActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -117,23 +120,31 @@ public class SplashActivity extends AppCompatActivity {
         });
     }
 
-    AtomicBoolean isToasted= new AtomicBoolean(false);
+    AtomicBoolean isToasted = new AtomicBoolean(false);
+
     public void checkInEveryThreeSec() {
 
         new Handler().postDelayed(() -> {
             if (CheckInternetConnection.isInternetAvailable(getApplicationContext())) {
                 CommonTask.snackBarInternetConnection(getApplicationContext(), findViewById(R.id.splashId));
-                // if (CommonTask.isHostReachable("http://www.load16.com",8443,3000)){
-                deviceIdViewModel.callForDeviceId(android_id);
+                if (!CommonTask.getPreferences(SplashActivity.this, ConstantValues.DOMAIN).equals("")) {
+                    CommonUrl.BASE_URL= "https://"+CommonTask.getPreferences(SplashActivity.this, ConstantValues.DOMAIN);
+                    deviceIdViewModel.callForDeviceId(android_id);
+                } else {
+                    intent = new Intent(SplashActivity.this, DomainConnectActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
             } else {
-                if (!isToasted.get()){
+                if (!isToasted.get()) {
                     isToasted.set(true);
                     CommonTask.snackBarInternetConnection(getApplicationContext(), findViewById(R.id.splashId));
                 }
-                new Handler().postDelayed(this::checkInEveryThreeSec,2000);
+                new Handler().postDelayed(this::checkInEveryThreeSec, 2000);
             }
         }, 3000);
     }
+
     public void checkInEveryTwosec() {
         new Handler().postDelayed(new Runnable() {
             public void run() {

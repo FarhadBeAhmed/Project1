@@ -21,6 +21,12 @@
         tools:ignore="UnusedAttribute"
         tools:replace="android:icon">
         <activity
+            android:name=".view.ui.RechargeHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ui.ResellerActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ui.Add_Balance.AddBalanceActivity"
             android:exported="false" />
         <activity
@@ -37,7 +43,7 @@
             android:exported="false" />
         <activity
             android:name=".view.ui.SplashActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,9 +53,7 @@
         <activity
             android:name=".view.ui.LoginActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize">
-
-        </activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".view.ui.MobileRecharge.FlexiloadActivity"
             android:exported="true"
@@ -82,7 +86,7 @@
             android:exported="false" />
         <activity
             android:name=".view.ui.PinActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".view.ui.SignUpPage"
             android:exported="true" />

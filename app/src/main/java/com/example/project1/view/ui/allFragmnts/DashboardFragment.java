@@ -24,6 +24,7 @@ import com.example.project1.service.ModelClasses.Pin;
 import com.example.project1.service.model.responseBody.HomeInfoResponse;
 import com.example.project1.util.CommonTask;
 import com.example.project1.util.ConstantValues;
+import com.example.project1.view.ui.LoginActivity;
 import com.example.project1.view.ui.PackagesFragment.AllPackagesActivity;
 
 import com.example.project1.view.ui.MBanking.Bkash.BkashActivity;
@@ -31,6 +32,7 @@ import com.example.project1.view.ui.BillPayment.BillPaymentActivity;
 import com.example.project1.view.ui.MBanking.Nagad.NagadActivity;
 import com.example.project1.view.ui.MBanking.Rocket.RocketActivity;
 import com.example.project1.view.ui.PinActivity;
+import com.example.project1.view.ui.ResellerActivity;
 import com.example.project1.view.ui.changePassPinActivity;
 import com.example.project1.view.ui.MobileRecharge.FlexiloadActivity;
 import com.example.project1.R;
@@ -73,6 +75,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
         binding.flaxiLayoutId.setOnClickListener(this);
         binding.blLayoutId.setOnClickListener(this);
+        binding.resellerLayoutId.setOnClickListener(this);
 
         binding.addBalLayoutId.setOnClickListener(this);
         binding.billLayoutId.setOnClickListener(this);
@@ -84,6 +87,9 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
 
             controlProgressBar(true);
             homeInfoViewModel.homeInfo(CommonTask.getPreferences(getContext(), ConstantValues.user.USER_ID),PinActivity.pinNumber.getPin());
+        }else if (!LoginActivity.userId.equals("") && PinActivity.pinNumber.getPin()!=null){
+            controlProgressBar(true);
+            homeInfoViewModel.homeInfo(LoginActivity.userId,PinActivity.pinNumber.getPin());
         }
        binding.reloadId.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -94,7 +100,9 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
             }
         });
 
-
+    if (CommonTask.getPreferences(getContext(),ConstantValues.Flexiload.LEVEL).equals("1")){
+        binding.resellerLayoutId.setVisibility(View.GONE);
+    }
 
         init();
 
@@ -109,7 +117,12 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
             @Override
             public void onChanged(HomeInfoResponse homeInfoResponse) {
 
+                if (Integer.parseInt(homeInfoResponse.getLevel())==1){
+                    binding.resellerLayoutId.setVisibility(View.GONE);
+                }
                 balance=homeInfoResponse.getBalance();
+                CommonTask.savePreferences(getContext(),ConstantValues.Flexiload.BALANCE,homeInfoResponse.getBalance());
+                CommonTask.savePreferences(getContext(),ConstantValues.Flexiload.LEVEL,homeInfoResponse.getLevel());
                 controlProgressBar(false);
                 binding.reloadId.setRefreshing(false);
                 binding.IDProfileName.setText(homeInfoResponse.getUserId()+" (Level "+homeInfoResponse.getLevel()+")");
@@ -131,7 +144,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         switch (id) {
             case R.id.flaxiLayoutId:
                 intent=new Intent(getContext(), FlexiloadActivity.class);
-                intent.putExtra(ConstantValues.Flexiload.BALANCE,balance);
+                //intent.putExtra(ConstantValues.Flexiload.BALANCE,balance);
                 startActivity(intent);
                 break;
             case R.id.addBalLayoutId:
@@ -144,6 +157,9 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
                 break;
             case R.id.blLayoutId:
                 showBottomSheetDialog();
+                break;
+            case R.id.resellerLayoutId:
+                startActivity(new Intent(getContext(), ResellerActivity.class));
                 break;
 
 

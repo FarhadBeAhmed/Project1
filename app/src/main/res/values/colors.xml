@@ -33,4 +33,12 @@
     <color name="banglalinkLogoColor">#D5571D</color>
     <color name="airtelLogoColor">#ed1d24</color>
     <color name="appColor2">#0a4e93</color>
+
+    <color name="pending">#DE00FF</color>
+    <color name="success">#60C36A</color>
+    <color name="cancelled">#FF0000</color>
+    <color name="failed">#FF00C0</color>
+    <color name="waiting">#FF8000</color>
+
+
 </resources>

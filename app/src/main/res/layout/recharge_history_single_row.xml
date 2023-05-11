@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:text="Mobile Recharge"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="@dimen/_10sdp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
@@ -30,7 +30,7 @@
             android:layout_below="@+id/trxTypeId"
             android:text="01830800237"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="@dimen/_13sdp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
         <LinearLayout
@@ -47,14 +47,15 @@
                 android:layout_height="wrap_content"
                 android:text="Trx_ID: "
                 android:textColor="@color/gray"
-                android:textSize="14sp"
+                android:textSize="@dimen/_11sdp"
                 tools:ignore="HardcodedText" />
             <TextView
+                android:id="@+id/transactionID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="trx323dshfjdjjfdk5434"
                 android:textColor="@color/gray"
-                android:textSize="14sp"
+                android:textSize="@dimen/_11sdp"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
@@ -74,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Success"
-                android:textSize="15sp"
+                android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"
                 android:textColor="@color/green"
                 tools:ignore="HardcodedText" />
@@ -88,21 +89,8 @@
             android:layout_below="@+id/id_StatusLayout"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:padding="2dp">
-
-            <TextView
-                android:id="@+id/id_Time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12:00 am"
-                android:layout_marginEnd="5dp"
-                android:layout_gravity="right"
-                android:textColor="@color/gray"
-                android:textSize="13sp"
-                tools:ignore="HardcodedText" />
-
-
 
             <TextView
                 android:id="@+id/id_date"
@@ -112,8 +100,22 @@
                 android:layout_marginEnd="5dp"
                 android:text="31-09-2022 "
                 android:textColor="@color/gray"
-                android:textSize="13sp"
+                android:textSize="@dimen/_10sdp"
                 tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/id_Time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginEnd="5dp"
+                android:text="12:00 am"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="HardcodedText" />
+
+
+
         </LinearLayout>
         <LinearLayout
             android:id="@+id/r_amountLayoutId"
@@ -139,53 +141,17 @@
                 android:layout_height="20dp"
                 />
             <TextView
+                android:id="@+id/amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="104.00"
-                android:textSize="17sp"
+                android:textSize="@dimen/_12sdp"
                 android:textStyle="bold"
                 android:textColor="@color/green"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
 
-        <LinearLayout
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/id_trx_IdLayout"
-            android:orientation="horizontal"
-            android:paddingEnd="5dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New balance"
-                android:textColor="@color/gray"
-                android:textSize="11sp"
-                tools:ignore="HardcodedText" />
-            <View
-                android:layout_width="3dp"
-                android:layout_height="20dp" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="৳"
-                android:textColor="@color/gray"
-                android:textSize="11sp"
-                tools:ignore="HardcodedText" />
-
-            <View
-                android:layout_width="3dp"
-                android:layout_height="20dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1045.00"
-                android:textColor="@color/gray"
-                android:textSize="11sp"
-                tools:ignore="HardcodedText" />
-        </LinearLayout>
 
     </RelativeLayout>
 

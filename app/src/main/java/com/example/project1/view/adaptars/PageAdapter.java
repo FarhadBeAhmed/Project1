@@ -7,7 +7,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.project1.view.ui.allFragmnts.ConnectFragment;
 import com.example.project1.view.ui.allFragmnts.ecardFragment;
-import com.example.project1.view.ui.allFragmnts.logInFragment;
 
 public class PageAdapter extends FragmentPagerAdapter {
     int tabCount;
@@ -21,9 +20,9 @@ public class PageAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
        switch (position){
-           case 0: return new logInFragment();
-           case 1: return new ecardFragment();
-           case 2: return new ConnectFragment();
+
+           case 0: return new ecardFragment();
+           case 1: return new ConnectFragment();
 
            default: return null;
 

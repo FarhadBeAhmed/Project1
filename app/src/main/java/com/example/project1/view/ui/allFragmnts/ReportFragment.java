@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 
 import com.example.project1.view.ui.AllReports.AllReportsActivity;
 import com.example.project1.R;
+import com.example.project1.view.ui.RechargeHistoryActivity;
 
 
 public class ReportFragment extends Fragment implements View.OnClickListener {
@@ -68,8 +69,8 @@ public class ReportFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.rHistoryLayoutId:
-                intent = new Intent(getContext(), AllReportsActivity.class);
-                intent.putExtra("fragmentValue", 3);
+                intent = new Intent(getContext(), RechargeHistoryActivity.class);
+                //intent.putExtra("fragmentValue", 3);
                 startActivity(intent);
                 break;
         }

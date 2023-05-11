@@ -17,7 +17,7 @@
             android:id="@+id/ToolbarId"
             android:layout_width="match_parent"
             android:layout_height="@dimen/toolbarHieght"
-            android:background="@color/toolbarColor"
+            android:background="@color/appColor2"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"

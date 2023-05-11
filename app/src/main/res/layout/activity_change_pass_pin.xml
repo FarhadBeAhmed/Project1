@@ -35,55 +35,63 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/green"
                     android:text="Password Change"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/_15sdp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
                 <EditText
                     android:id="@+id/oldPassId"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_below="@+id/passwordChangeId"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/_7sdp"
                     android:background="@drawable/pass_pin_change_back"
                     android:hint="Old Password"
+                    android:maxLines="1"
                     android:paddingStart="10dp"
                     tools:ignore="HardcodedText,RtlSymmetry,TouchTargetSizeCheck" />
 
                 <EditText
                     android:id="@+id/newPassId"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="@dimen/_35sdp"
                     android:background="@drawable/pass_pin_change_back"
                     android:layout_below="@+id/oldPassId"
                     android:hint="New Password"
-                    android:layout_marginTop="10dp"
+                    android:maxLines="1"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:paddingStart="10dp"
                     tools:ignore="HardcodedText,RtlSymmetry,TouchTargetSizeCheck" />
 
                 <EditText
                     android:id="@+id/confirmPassId"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_below="@+id/newPassId"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/pass_pin_change_back"
                     android:hint="Confirm Password"
                     android:minHeight="48dp"
+                    android:maxLines="1"
                     android:paddingStart="10dp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/passSubmit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/_10sdp"
                     android:layout_below="@id/confirmPassId"
+                    android:background="@color/appColor2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
                     android:text="submit" />
 
             </RelativeLayout>
             <RelativeLayout
                 android:layout_below="@+id/changePassLayout1"
-                android:paddingTop="10dp"
+                android:paddingTop="@dimen/_10sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="10dp"
@@ -94,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/green"
                     android:text="Pin Change"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/_15sdp"
                     android:textStyle="bold"
                     tools:ignore="HardcodedText" />
 
@@ -102,7 +110,7 @@
                     android:layout_marginTop="10dp"
                     android:id="@+id/oldPinId"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="@dimen/_35sdp"
                     android:background="@drawable/pass_pin_change_back"
                     android:layout_below="@+id/pinChangeId"
                     android:hint="Old Pin"
@@ -113,7 +121,7 @@
                 <EditText
                     android:id="@+id/newPinId"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="@dimen/_35sdp"
                     android:background="@drawable/pass_pin_change_back"
                     android:layout_below="@+id/oldPinId"
                     android:hint="New Pin"
@@ -124,7 +132,7 @@
                 <EditText
                     android:id="@+id/confirmPinId"
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
+                    android:layout_height="@dimen/_35sdp"
                     android:layout_below="@+id/newPinId"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/pass_pin_change_back"
@@ -133,9 +141,14 @@
                     android:paddingStart="10dp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/pinSubmit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:background="@color/appColor2"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_12sdp"
                     android:text="submit"
                     android:layout_below="@id/confirmPinId"
                     />

@@ -63,6 +63,7 @@
                     android:clickable="true"
                     android:drawablePadding="5dp"
                     android:focusable="true"
+                    android:maxLines="1"
                     android:inputType=""
                     android:drawableStart="@drawable/custom_username_icon"
                     android:paddingLeft="10dp"
