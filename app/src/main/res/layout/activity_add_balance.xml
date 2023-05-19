@@ -13,17 +13,12 @@
         android:id="@+id/parentView"
         >
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/ToolbarId"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/toolbarHieght"
-            android:background="@color/toolbarColor"
-            android:textColor="@color/white"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:title="Add Balance"
-            app:titleTextColor="@color/white"
+        <include
 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ToolbarId"
+            layout="@layout/toolbar"
             />
         <RelativeLayout
             android:layout_below="@+id/ToolbarId"

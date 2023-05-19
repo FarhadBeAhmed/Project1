@@ -84,9 +84,10 @@
                     android:layout_below="@id/confirmPassId"
                     android:background="@color/appColor2"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/_12sdp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
-                    android:text="submit" />
+                    android:text="submit"
+                    tools:ignore="HardcodedText" />
 
             </RelativeLayout>
             <RelativeLayout
@@ -148,14 +149,13 @@
                     android:background="@color/appColor2"
                     android:textColor="@color/white"
                     android:textStyle="bold"
-                    android:textSize="@dimen/_12sdp"
+                    android:textSize="15sp"
                     android:text="submit"
                     android:layout_below="@id/confirmPinId"
-                    />
+                    tools:ignore="HardcodedText" />
 
             </RelativeLayout>
 
         </RelativeLayout>
     </RelativeLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
