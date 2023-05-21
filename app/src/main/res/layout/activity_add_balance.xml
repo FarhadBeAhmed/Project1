@@ -69,15 +69,112 @@
                 android:layout_height="match_parent"
                 android:layout_below="@+id/seCardId"
                 >
-                <androidx.recyclerview.widget.RecyclerView
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/headerId"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    tools:listitem="@layout/add_bal_single_row"
-                    android:layout_marginTop="10dp"
+                    android:paddingHorizontal="@dimen/_10sdp"
+                    android:paddingVertical="@dimen/_5sdp">
+
+                    <RelativeLayout
+                        android:id="@+id/accountHeaderLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/balanceHeaderLayout"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Account"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            tools:ignore="HardcodedText"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/balanceHeaderLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/addHeaderLayout"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/accountHeaderLayout"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Balance"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            tools:ignore="HardcodedText"
+                            />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/returnHeaderLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/addHeaderLayout"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Return"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            tools:ignore="HardcodedText" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/addHeaderLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/returnHeaderLayout"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/balanceHeaderLayout"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Add"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            tools:ignore="HardcodedText"/>
+                    </RelativeLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:layout_below="@+id/headerId"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/gray"
+                    />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleViewId"
+                    android:layout_below="@+id/headerId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:listitem="@layout/mem_acc_singlerow"
                     />
                 <TextView
-                    android:visibility="gone"
-                    android:id="@+id/addBalanceNoRecFoundId"
+                    android:id="@+id/noRecFoundId"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="No Record Found"
@@ -89,6 +186,7 @@
             </RelativeLayout>
 
         </RelativeLayout>
+
 
 
     </RelativeLayout>

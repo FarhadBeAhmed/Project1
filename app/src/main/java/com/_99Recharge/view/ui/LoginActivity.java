@@ -70,7 +70,11 @@ public class LoginActivity extends AppCompatActivity {
                     controlProgressBar(true);
                     loginViewModel.login(userId, pass, CommonTask.getDeviceID(getApplicationContext()));
                 }else {
-                    CommonTask.snackBar(getApplicationContext(), findViewById(R.id.splashId),"Invalid user: Your device is already registered to another User");
+                    new SweetAlertDialog(LoginActivity.this, SweetAlertDialog.WARNING_TYPE)
+                            .setTitleText("Warning")
+                            .setContentText("Invalid user: Your device is already registered to another User")
+                            .setConfirmText(" OK ")
+                            .show();
                 }
 
 

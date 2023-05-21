@@ -5,6 +5,7 @@ import com._99Recharge.service.model.requestBody.DeviceIdRequest;
 import com._99Recharge.service.model.requestBody.DomainChkRequest;
 import com._99Recharge.service.model.requestBody.HomeInfoRequest;
 import com._99Recharge.service.model.requestBody.LoginRequestBody;
+import com._99Recharge.service.model.requestBody.MemAccActionRequest;
 import com._99Recharge.service.model.requestBody.MemberAccountingRequest;
 import com._99Recharge.service.model.requestBody.MobileRechargeRequest;
 import com._99Recharge.service.model.requestBody.PackagesRequest;
@@ -14,6 +15,7 @@ import com._99Recharge.service.model.responseBody.CommonResponse;
 import com._99Recharge.service.model.responseBody.DeviceIdResponse;
 import com._99Recharge.service.model.responseBody.HomeInfoResponse;
 import com._99Recharge.service.model.responseBody.LoginResponse;
+import com._99Recharge.service.model.responseBody.MemAccActionResponse;
 import com._99Recharge.service.model.responseBody.MemberAccountingResponse;
 import com._99Recharge.service.model.responseBody.MobileRechargeResponse;
 import com._99Recharge.service.model.responseBody.PackageResponse;
@@ -55,6 +57,9 @@ public interface ApiService {
 
     @POST("/app/get_member_accounting.php")
     Call<MemberAccountingResponse>add_balance(@Body MemberAccountingRequest memberAccountingRequest);
+
+    @POST("/app/member_acc_act.php")
+    Call<MemAccActionResponse>acc_action(@Body MemAccActionRequest memAccActionRequest);
 
 
 }

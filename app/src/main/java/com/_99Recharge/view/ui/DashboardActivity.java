@@ -15,6 +15,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import com._99Recharge.R;
 import com._99Recharge.service.FHelper.User;
+import com._99Recharge.util.CommonTask;
+import com._99Recharge.util.ConstantValues;
 import com._99Recharge.view.adaptars.DashboardPageAdapter;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabItem;
@@ -98,12 +100,8 @@ public class DashboardActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id) {
             case R.id.logoutId:
-                user.getSession().logoutUser();
                 finishAffinity();
-                startActivity(new Intent(this, LoginActivity.class));
-            case R.id.noticeBoardId:
-                Snackbar.make(thisView,"Notice",Snackbar.LENGTH_INDEFINITE).show();
-
+                startActivity(new Intent(this, PinActivity.class));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

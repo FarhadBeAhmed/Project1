@@ -71,11 +71,7 @@ public class PinActivity extends AppCompatActivity implements View.OnClickListen
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        CommonTask.snackBarInternetConnection(this,findViewById(R.id.pinActivity));
-    }
+
 
     @Override
     public void onClick(View view) {

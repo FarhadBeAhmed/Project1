@@ -22,11 +22,11 @@
             android:layout_height="match_parent"
             android:text="Transfer Balance"
             android:gravity="center"
-            android:textSize="@dimen/_12sdp"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:layout_marginStart="@dimen/_10sdp"
-            />
+            tools:ignore="HardcodedText" />
     </RelativeLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -149,6 +149,9 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <RelativeLayout
+                android:id="@+id/submitButton"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/green">
@@ -160,8 +163,9 @@
                     android:paddingVertical="@dimen/_10sdp"
                     android:text="Submit"
                     android:textStyle="bold"
-                    android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/white"/>
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    tools:ignore="HardcodedText" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -175,7 +179,9 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <RelativeLayout
-
+                android:id="@+id/cancelButton"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@color/red"
@@ -188,8 +194,9 @@
                     android:paddingVertical="@dimen/_10sdp"
                     android:text="Cancel"
                     android:textStyle="bold"
-                    android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/white" />
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    tools:ignore="HardcodedText" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

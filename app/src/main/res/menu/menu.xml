@@ -9,80 +9,12 @@
         android:icon="@drawable/ic_notice"
         tools:ignore="HardcodedText"
         />
-    <item android:title="Get Code"
-        android:id="@+id/getCodeId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="Notice Board"
-        android:id="@+id/noticeBoardId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="ePin"
-        android:id="@+id/ePinId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="Complain"
-        android:id="@+id/complainId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="Profile Update"
-        android:id="@+id/profileUpdateId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="Change Pin"
-        android:id="@+id/changePinId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="Change Pass"
-        android:id="@+id/changePassId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="Add Balance"
-        android:id="@+id/addBalanceId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="My Rates"
-        android:id="@+id/myRatesId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="Access Log"
-        android:id="@+id/accessLogId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="Device Lock"
-        android:id="@+id/deviceLockId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="Payment Request"
-        android:id="@+id/paymentRequestId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="All Notice"
-        android:id="@+id/allNoticeId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
-    <item android:title="Printer"
-        android:id="@+id/printerId"
-        app:showAsAction="never"
-        tools:ignore="HardcodedText"
-        />
+
     <item android:title="Logout"
         android:id="@+id/logoutId"
-        app:showAsAction="never"
         tools:ignore="HardcodedText"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/baseline_logout_24"
         />
 
 

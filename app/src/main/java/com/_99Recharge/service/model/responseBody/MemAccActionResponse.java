@@ -4,23 +4,14 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class MemAccActionResponse {
-    @SerializedName("res_value")
-    @Expose
-    private Integer res_value;
+
     @SerializedName("error")
     @Expose
     private Integer error;
     @SerializedName("msg")
     @Expose
-    private Integer msg;
+    private String msg;
 
-    public Integer getRes_value() {
-        return res_value;
-    }
-
-    public void setRes_value(Integer res_value) {
-        this.res_value = res_value;
-    }
 
     public Integer getError() {
         return error;
@@ -30,11 +21,11 @@ public class MemAccActionResponse {
         this.error = error;
     }
 
-    public Integer getMsg() {
+    public String getMsg() {
         return msg;
     }
 
-    public void setMsg(Integer msg) {
+    public void setMsg(String msg) {
         this.msg = msg;
     }
 }

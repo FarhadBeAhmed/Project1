@@ -106,20 +106,23 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         homeInfoViewModel.getHomeInfo().observe(getViewLifecycleOwner(), new Observer<HomeInfoResponse>() {
             @Override
             public void onChanged(HomeInfoResponse homeInfoResponse) {
+                if (homeInfoResponse!=null){
+                    if (Integer.parseInt(homeInfoResponse.getLevel())==1){
+                        binding.resellerLayoutId.setVisibility(View.GONE);
+                    }
+                    balance=homeInfoResponse.getBalance();
+                    CommonTask.savePreferences(getContext(),ConstantValues.Flexiload.BALANCE,homeInfoResponse.getBalance());
+                    CommonTask.savePreferences(getContext(),ConstantValues.Flexiload.LEVEL,homeInfoResponse.getLevel());
+                    controlProgressBar(false);
+                    binding.reloadId.setRefreshing(false);
+                    binding.IDProfileName.setText(homeInfoResponse.getUserId()+" (Level "+homeInfoResponse.getLevel()+")");
+                    binding.netBalId.setText(homeInfoResponse.getBalance());
+                    binding.dashboardProfileName.setText("SMS ID: "+homeInfoResponse.getMobile());
 
-                if (Integer.parseInt(homeInfoResponse.getLevel())==1){
-                    binding.resellerLayoutId.setVisibility(View.GONE);
                 }
-                balance=homeInfoResponse.getBalance();
-                CommonTask.savePreferences(getContext(),ConstantValues.Flexiload.BALANCE,homeInfoResponse.getBalance());
-                CommonTask.savePreferences(getContext(),ConstantValues.Flexiload.LEVEL,homeInfoResponse.getLevel());
-                controlProgressBar(false);
-                binding.reloadId.setRefreshing(false);
-                binding.IDProfileName.setText(homeInfoResponse.getUserId()+" (Level "+homeInfoResponse.getLevel()+")");
-                binding.netBalId.setText(homeInfoResponse.getBalance());
-                binding.dashboardProfileName.setText("SMS ID: "+homeInfoResponse.getMobile());
+                }
 
-            }
+
         });
 
 

@@ -22,14 +22,18 @@ public class MemAccActionRequest {
     @SerializedName("tran")
     @Expose
     private String tran;
+    @SerializedName("temp_pin")
+    @Expose
+    private String temp_pin;
 
-    public MemAccActionRequest(String user_id, String receiver, String amount, String remark, String pin, String tran) {
+    public MemAccActionRequest(String user_id, String receiver, String amount, String remark, String pin, String tran, String temp_pin) {
         this.user_id = user_id;
         this.receiver = receiver;
         this.amount = amount;
         this.remark = remark;
         this.pin = pin;
         this.tran = tran;
+        this.temp_pin = temp_pin;
     }
 
     public String getUser_id() {
@@ -78,5 +82,13 @@ public class MemAccActionRequest {
 
     public void setTran(String tran) {
         this.tran = tran;
+    }
+
+    public String getTemp_pin() {
+        return temp_pin;
+    }
+
+    public void setTemp_pin(String temp_pin) {
+        this.temp_pin = temp_pin;
     }
 }

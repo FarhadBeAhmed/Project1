@@ -17,7 +17,7 @@ public class MemberAccountingViewModel extends ViewModel {
     public MemberAccountingViewModel(){
         memberAccountingRepo=new MemberAccountingRepo();
     }
-    public void callForDeviceId(String user_id,String other_user){
+    public void callForMemAcc(String user_id,String other_user){
         memberAccountingRepo.callForAccounting(new MemberAccountingRequest(user_id,other_user), new IMemberAccountingResponse() {
             @Override
             public void onResponse(MemberAccountingResponse memberAccountingResponse) {
