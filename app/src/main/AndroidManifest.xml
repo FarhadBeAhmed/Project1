@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com._99Recharge.customer">
+    package="com.app_99recharge">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
-        android:name=".service.FHelper.ProjectApp"
+        android:name="com.app_99recharge.service.FHelper.ProjectApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,28 +21,28 @@
         tools:ignore="UnusedAttribute"
         tools:replace="android:icon">
         <activity
-            android:name=".view.ui.RechargeHistoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.ui.ResellerActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.ui.Add_Balance.AddBalanceActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.ui.MobileRecharge.ContactListActivity"
+            android:name="com.app_99recharge.view.ui.RechargeHistoryActivity"
             android:exported="true" />
         <activity
-            android:name=".view.ui.AllReports.AllReportsActivity"
+            android:name="com.app_99recharge.view.ui.ResellerActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ui.PackagesFragment.AllPackagesActivity"
+            android:name="com.app_99recharge.view.ui.Add_Balance.AddBalanceActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ui.DomainConnectActivity"
+            android:name="com.app_99recharge.view.ui.MobileRecharge.ContactListActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.app_99recharge.view.ui.AllReports.AllReportsActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.app_99recharge.view.ui.PackagesFragment.AllPackagesActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ui.SplashActivity"
+            android:name="com.app_99recharge.view.ui.DomainConnectActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.app_99recharge.view.ui.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,47 +51,45 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.ui.LoginActivity"
+            android:name="com.app_99recharge.view.ui.LoginActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".view.ui.MobileRecharge.FlexiloadActivity"
+            android:name="com.app_99recharge.view.ui.MobileRecharge.FlexiloadActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".view.ui.changePassPinActivity"
+            android:name="com.app_99recharge.view.ui.changePassPinActivity"
             android:exported="true" />
         <activity
-            android:name=".view.ui.BillPayment.BillPaymentActivity"
+            android:name="com.app_99recharge.view.ui.BillPayment.BillPaymentActivity"
             android:exported="true" />
         <activity
-            android:name=".view.ui.MBanking.Nagad.NagadActivity"
+            android:name="com.app_99recharge.view.ui.MBanking.Nagad.NagadActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
+            />
         <activity
-            android:name=".view.ui.MBanking.Rocket.RocketActivity"
+            android:name="com.app_99recharge.view.ui.MBanking.Rocket.RocketActivity"
             android:exported="true"
-            android:label="@string/title_activity_rocket"
-            android:theme="@style/Theme.Project1.NoActionBar"
-            android:windowSoftInputMode="adjustResize" />
+            />
         <activity
-            android:name=".view.ui.MBanking.Bkash.BkashActivity"
+            android:name="com.app_99recharge.view.ui.MBanking.Bkash.BkashActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
+            />
         <activity
-            android:name=".view.ui.HistoryActivity"
+            android:name="com.app_99recharge.view.ui.HistoryActivity"
             android:exported="true" />
         <activity
-            android:name=".view.ui.DashboardActivity"
+            android:name="com.app_99recharge.view.ui.DashboardActivity"
             android:exported="false" />
         <activity
-            android:name=".view.ui.PinActivity"
+            android:name="com.app_99recharge.view.ui.PinActivity"
             android:exported="true" />
         <activity
-            android:name=".view.ui.SignUpPage"
+            android:name="com.app_99recharge.view.ui.SignUpPage"
             android:exported="true" />
         <activity
-            android:name=".view.ui.MainActivity"
+            android:name="com.app_99recharge.view.ui.MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize" />
 
