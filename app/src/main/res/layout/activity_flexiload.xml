@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pageNormalBackgroundColor"
-    tools:context=".view.ui.MobileRecharge.FlexiloadActivity">
+    tools:context=".customer.view.ui.MobileRecharge.FlexiloadActivity">
 
 
     <include
@@ -30,7 +30,7 @@
             android:id="@+id/cardView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="@dimen/_5sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -349,6 +349,7 @@
 
 
         <RelativeLayout
+            android:id="@+id/btnLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -374,6 +375,44 @@
                 android:translationZ="2dp"
                 tools:ignore="HardcodedText" />
 
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@+id/btnLayout"
+            app:layout_constraintVertical_bias="0.01999998">
+            <TextView
+                android:id="@+id/reportId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reports"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:paddingStart="@dimen/_5sdp"
+                tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/not_found"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Data Not Found"
+                android:textColor="@color/gray"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rechargesRecView"
+                android:layout_below="@+id/reportId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/recharge_history_single_row"
+                />
 
         </RelativeLayout>
 

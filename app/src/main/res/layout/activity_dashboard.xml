@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.DashboardActivity">
+    tools:context=".customer.view.ui.DashboardActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,12 +19,11 @@
             android:layout_height="@dimen/toolbarHieght"
             android:background="@color/appColor2"
             android:textColor="@color/white"
-            android:textSize="15sp"
             android:textStyle="bold"
-            app:title="99 Recharge"
+            app:title=""
             app:titleTextColor="@color/white"
 
-            />
+           />
         <RelativeLayout
             android:layout_below="@+id/ToolbarId"
             android:layout_width="match_parent"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.RechargeHistoryActivity">
+    tools:context=".customer.view.ui.RechargeHistoryActivity">
 
     <include
         android:id="@+id/flexiloadToolbarId"
@@ -25,15 +25,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flexiloadToolbarId"
         app:layout_constraintVertical_bias="0.0" />
+
     <TextView
         android:id="@+id/not_found"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Data Not Found"
         android:gravity="center"
-        android:textSize="20sp"
+        android:text="Data Not Found"
         android:textColor="@color/gray"
-        />
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

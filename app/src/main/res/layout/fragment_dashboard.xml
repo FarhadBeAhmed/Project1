@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/reloadId"
     android:background="@color/white"
-    tools:context=".view.ui.allFragmnts.DashboardFragment">
+    tools:context=".customer.view.ui.allFragmnts.DashboardFragment">
 
     <!-- TODO: Update blank fragment layout -->
 

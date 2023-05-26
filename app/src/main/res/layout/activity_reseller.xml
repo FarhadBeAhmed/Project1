@@ -5,18 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="none"
-    tools:context=".view.ui.ResellerActivity">
+    tools:context=".customer.view.ui.ResellerActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         android:id="@+id/resellerActivity"
         >
 
         <include
             android:id="@+id/mainToolbarId"
             layout="@layout/toolbar"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -77,7 +75,7 @@
             app:boxCornerRadiusTopStart="10dp"
             app:boxStrokeWidth="1dp"
             app:boxStrokeWidthFocused=".5dp"
-            app:layout_constraintBottom_toTopOf="@+id/level"
+            app:layout_constraintBottom_toTopOf="@+id/user"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name"
@@ -98,7 +96,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/level"
+            android:id="@+id/user"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -134,43 +132,6 @@
                 tools:ignore="RtlSymmetry,UnusedAttribute" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/user"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:background="@drawable/reseller_edit_text_back"
-            android:hint="Address"
-            android:paddingHorizontal="@dimen/_5sdp"
-            android:paddingBottom="5dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusTopEnd="10dp"
-            app:boxCornerRadiusTopStart="10dp"
-            app:boxStrokeWidth="1dp"
-
-            app:boxStrokeWidthFocused=".5dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pin"
-            tools:ignore="HardcodedText">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/baseline_arrow_right_24"
-                android:drawablePadding="5dp"
-                android:drawableTint="@color/appColor2"
-                android:fontFamily="@font/andada"
-                android:inputType="text"
-                android:maxLines="1"
-                android:paddingStart="10dp"
-                android:textColor="@color/text_color"
-                tools:ignore="RtlSymmetry,UnusedAttribute" />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password"
@@ -181,7 +142,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="@dimen/_15sdp"
             android:background="@drawable/reseller_edit_text_back"
-            android:hint="Address"
+            android:hint="password"
             android:paddingHorizontal="@dimen/_5sdp"
             android:paddingBottom="5dp"
             app:boxCornerRadiusBottomEnd="10dp"
@@ -231,7 +192,7 @@
             app:boxStrokeWidthFocused=".5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/level"
+            app:layout_constraintTop_toBottomOf="@+id/password"
             tools:ignore="HardcodedText">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -257,7 +218,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.52"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password">
+            app:layout_constraintTop_toBottomOf="@+id/pin">
 
             <TextView
                 android:id="@+id/radioTag"
@@ -265,7 +226,7 @@
                 android:layout_height="wrap_content"
                 android:text="Account\nType"
                 android:textAlignment="center"
-                android:textSize="@dimen/_11sdp"
+                android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/operatorsId"
@@ -295,7 +256,7 @@
                     android:paddingHorizontal="@dimen/_5sdp"
                     android:text="Customer"
                     android:textColor="@drawable/radio_text_color"
-                    android:textSize="@dimen/_10sdp"
+                    android:textSize="12sp"
                     tools:ignore="HardcodedText,TouchTargetSizeCheck" />
 
                 <RadioButton

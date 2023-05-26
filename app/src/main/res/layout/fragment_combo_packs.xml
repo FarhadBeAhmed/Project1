@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/pageNormalBackgroundColor"
-    tools:context=".view.ui.allFragmnts.ComboPacksFragment">
+    tools:context=".customer.view.ui.allFragmnts.ComboPacksFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/comboRecyclerView"
